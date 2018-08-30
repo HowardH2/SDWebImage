@@ -127,7 +127,7 @@ static char TAG_ACTIVITY_SHOW;
 
                     sself.animationImages = currentImages;
                     [sself setNeedsLayout];
-                }
+                }sself.animationRepeatCount = 1;
                 [sself startAnimating];
             });
         }];
