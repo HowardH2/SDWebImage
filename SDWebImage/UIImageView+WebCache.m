@@ -127,7 +127,10 @@ static char TAG_ACTIVITY_SHOW;
 
                     sself.animationImages = currentImages;
                     [sself setNeedsLayout];
-                }sself.animationRepeatCount = 1;
+                }
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(image.duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [sself stopAnimating];
+                });
                 [sself startAnimating];
             });
         }];
